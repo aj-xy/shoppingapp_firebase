@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:shoppingapp_firebase/cart.dart';
 import 'package:shoppingapp_firebase/shoes.dart';
 import 'package:shoppingapp_firebase/tag.dart';
 
@@ -28,9 +30,18 @@ class _FirstpageState extends State<Firstpage> {
           SizedBox(
             width: 10,
           ),
-          Icon(
-            Icons.shopping_bag_rounded,
-            color: Colors.black,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return Cart();
+                },
+              ));
+            },
+            child: Icon(
+              Icons.shopping_bag_rounded,
+              color: Colors.black,
+            ),
           ),
           SizedBox(
             width: 10,
@@ -164,7 +175,10 @@ class _FirstpageState extends State<Firstpage> {
                     return ListView.builder(
                       itemCount: snapshot.data!.docs.length,
                       itemBuilder: (context, index) {
-                        return shoes(data: snapshot.data!.docs,index: index,);
+                        return shoes(
+                          data: snapshot.data!.docs,
+                          index: index,
+                        );
                       },
                     );
                   },

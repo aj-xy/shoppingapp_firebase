@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:shoppingapp_firebase/cart.dart';
 
 class Product extends StatelessWidget {
   List data;
@@ -19,9 +21,18 @@ class Product extends StatelessWidget {
           SizedBox(
             width: 10,
           ),
-          Icon(
-            Icons.shopping_bag_rounded,
-            color: Colors.black,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return Cart();
+                },
+              ));
+            },
+            child: Icon(
+              Icons.shopping_bag_rounded,
+              color: Colors.black,
+            ),
           ),
           SizedBox(
             width: 10,
@@ -63,14 +74,16 @@ class Product extends StatelessWidget {
                 children: [
                   Text(
                     "UK 4",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
+                    style:
+                        TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
                   ),
                   SizedBox(
                     width: 45,
                   ),
                   Text(
                     "UK 4.5",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
+                    style:
+                        TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
                   ),
                   SizedBox(
                     width: 45,
@@ -84,14 +97,16 @@ class Product extends StatelessWidget {
                   ),
                   Text(
                     "UK 5.5",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
+                    style:
+                        TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
                   ),
                   SizedBox(
                     width: 45,
                   ),
                   Text(
                     "UK 6",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
+                    style:
+                        TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
                   ),
                 ],
               ),
@@ -106,9 +121,10 @@ class Product extends StatelessWidget {
                       Text(
                         "Quantity",
                         style: TextStyle(fontSize: 15),
-                      ),SizedBox(width: 298,),
-                      
-                      
+                      ),
+                      SizedBox(
+                        width: 298,
+                      ),
                       Text(
                         "Price",
                         style: TextStyle(fontSize: 15),
@@ -123,30 +139,47 @@ class Product extends StatelessWidget {
                       Icon(
                         Icons.remove_circle_outline,
                         color: Colors.black,
-                      ),SizedBox(width: 5,),
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
                       Text(
                         "1",
-                        style:
-                            TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                      ),SizedBox(width: 5,),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
                       Icon(
                         Icons.add_circle_outline,
                         color: Colors.black,
                       ),
-                      SizedBox(width: 65,),
+                      SizedBox(
+                        width: 65,
+                      ),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color.fromRGBO(246, 246, 246, 1),
+                              backgroundColor:
+                                  const Color.fromRGBO(246, 246, 246, 1),
                               shape: RoundedRectangleBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10)),
                                   side: BorderSide(
                                       style: BorderStyle.solid,
                                       color: Colors.black))),
-                          onPressed: () {},
+                          onPressed: () {
+                            
+                          },
                           child: Text("Add To Cart")),
-                          SizedBox(width: 30,),
-                      Text(data[index]['price'],style: TextStyle(fontWeight: FontWeight.bold,fontSize: 28),)
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Text(
+                        data[index]['price'],
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 28),
+                      )
                     ],
                   )
                 ],
