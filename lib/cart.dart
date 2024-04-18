@@ -143,7 +143,7 @@ class Cart extends StatelessWidget {
                             ],
                           )
                         ],
-                      )
+                      ),
                     ],
                   );
                 },
