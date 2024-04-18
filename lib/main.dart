@@ -16,8 +16,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Firstpage()
-    );
+    return const MaterialApp(home: Firstpage());
   }
 }

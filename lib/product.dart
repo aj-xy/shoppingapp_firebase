@@ -212,7 +212,7 @@ class Product extends StatelessWidget {
                           onPressed: () {
                             showAutoDismissDialog(context);
                             addData();
-                          }, 
+                          },
                           child: Text("Add To Cart")),
                       SizedBox(
                         width: 30,

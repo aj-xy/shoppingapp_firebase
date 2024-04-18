@@ -135,8 +135,11 @@ class Cart extends StatelessWidget {
                               SizedBox(
                                 width: 294,
                               ),
-                              Text("${snapshot.data!.docs[0]['price']}",style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 16),)
+                              Text(
+                                "${snapshot.data!.docs[0]['price']}",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 16),
+                              )
                             ],
                           )
                         ],
